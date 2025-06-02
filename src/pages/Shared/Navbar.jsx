@@ -33,8 +33,12 @@ const Navbar = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">
-            <li><NavLink>Home</NavLink></li>
-            <li><NavLink>Item 3</NavLink></li>
+            <li><NavLink to={'/'}>Home</NavLink></li>
+            {
+                user && <>
+                    <li><NavLink to={'/myApplications'}>My Applications</NavLink></li>
+                </>
+            }
             </ul>
         </div>
         <div className="navbar-end">
@@ -43,6 +47,7 @@ const Navbar = () => {
                     <NavLink to={'/register'} className="btn">Register</NavLink>
                     <NavLink to={'/signIn'} className="btn">SignIn</NavLink>
                 </>
+
             }
         </div>
         </div>
